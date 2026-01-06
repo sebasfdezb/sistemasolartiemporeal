@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sistema Solar - Sebastian Fernandez</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sistema Solar</h1>
+        <div id="clock">Sincronizando...</div>
+    </header>
+
+    <div id="info-box">
+        <h2 id="planet-name">Planeta</h2>
+        <span class="data-label">Dato Curioso</span>
+        <p id="planet-fact"></p>
+        <span class="data-label">Dato Técnico</span>
+        <p id="planet-tech"></p>
+        <button class="close-btn" onclick="closeInfoBox()">Cerrar</button>
+    </div>
+
+    <div class="zoom-controls">
+        <button onclick="changeZoom(1.2)">+</button>
+        <button onclick="changeZoom(0.8)">-</button>
+    </div>
+
+    <div id="instructions">Toca un planeta • Usa zoom</div>
+    <div id="credits">Creado por Sebastián Fernández Buelvas</div>
+
+    <canvas id="solarCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>

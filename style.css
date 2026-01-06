@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    touch-action: none; /* Importante para el canvas en móvil */
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    pointer-events: none;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.3rem, 5vw, 2.3rem);
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #f1c40f;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(241, 196, 15, 0.6);
+}
+
+#clock {
+    font-family: 'Courier New', monospace;
+    font-size: clamp(0.7rem, 3vw, 1rem);
+    color: #7fdbff;
+    margin-top: 5px;
+    text-shadow: 0 0 5px rgba(127, 219, 255, 0.3);
+}
+
+canvas { display: block; }
+
+/* --- Tarjeta de Información Responsiva --- */
+#info-box {
+    position: fixed;
+    background: linear-gradient(145deg, rgba(20, 20, 35, 0.95), rgba(10, 10, 20, 0.98));
+    border: 1px solid rgba(241, 196, 15, 0.6);
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    padding: 25px;
+    border-radius: 30px;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    
+    /* Desktop */
+    bottom: 60px;
+    right: 30px;
+    width: 320px;
+}
+
+#info-box.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* --- AJUSTES MÓVIL --- */
+@media (max-width: 600px) {
+    #info-box {
+        bottom: 10px;
+        right: 5%;
+        left: 5%;
+        width: 90%;
+        padding: 20px;
+        border-radius: 25px 25px 0 0; /* Estilo hoja inferior */
+    }
+
+    .zoom-controls {
+        top: 20px; /* En móvil movemos los botones arriba para no tapar el Sol */
+        right: 20px;
+        left: auto !important;
+        bottom: auto !important;
+    }
+
+    #instructions { display: none; }
+    #credits { width: 100%; text-align: center; right: 0 !important; font-size: 0.7rem; bottom: 5px; }
+}
+
+#info-box h2 { margin: 0; font-size: 1.6rem; color: #f1c40f; text-align: center; text-transform: uppercase; }
+.data-label { display: block; color: #00e5ff; font-size: 0.75rem; text-transform: uppercase; margin-top: 15px; font-weight: 700; border-bottom: 1px solid rgba(0, 229, 255, 0.2); }
+#info-box p { font-size: 0.95rem; line-height: 1.5; color: #ecf0f1; margin: 5px 0 0; }
+.close-btn { width: 100%; margin-top: 20px; background: #f1c40f; color: #000; border: none; padding: 12px; border-radius: 50px; font-weight: bold; cursor: pointer; }
+
+/* Controles de Zoom */
+.zoom-controls {
+    position: absolute;
+    left: 30px;
+    bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 50;
+}
+
+.zoom-controls button {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    background: rgba(20, 20, 35, 0.8);
+    border: 2px solid #f1c40f;
+    color: #f1c40f;
+    border-radius: 50%;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+#instructions, #credits {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    z-index: 5;
+}
+#instructions { left: 30px; }
+#credits { right: 30px; }
