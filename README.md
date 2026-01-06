@@ -31,7 +31,7 @@ Una recreación dinámica y educativa del sistema solar desarrollada con **HTML5
 
 ## 📐 Lógica Matemática de las Órbitas
 
-Para lograr que el movimiento sea astronómicamente coherente, se implementó la siguiente fórmula para determinar la posición de cada planeta en el canvas:Ç
+Para lograr que el movimiento sea astronómicamente coherente, se implementó la siguiente fórmula para determinar la posición de cada planeta en el canvas:
 $$\text{Ángulo} = \left( \frac{\text{Tiempo Actual (ms)} \pmod{\text{Periodo Orbital (ms)}}}{\text{Periodo Orbital (ms)}} \right) \times 2\pi$$
 
 ## ✒️ Autor
