@@ -1,7 +1,3 @@
-Aquí tienes una versión profesional, visual y optimizada para el archivo `README.md` de tu repositorio. Incluye insignias (badges), una estructura clara y bloques de código para resaltar tu trabajo.
-
----
-
 # 🌌 Sistema Solar Interactivo en Tiempo Real
 
 Una recreación dinámica y educativa del sistema solar desarrollada con **HTML5 Canvas**, **CSS3** y **JavaScript**. Este proyecto simula el movimiento orbital de los planetas basándose en el tiempo real astronómico y ofrece una interfaz interactiva y responsiva para explorar el cosmos.
